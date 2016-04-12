@@ -27,10 +27,9 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
+
   def destroy
-    @user = @current_user.destory
+    @current_user.destroy
   end
 
   private
