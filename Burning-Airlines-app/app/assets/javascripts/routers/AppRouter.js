@@ -5,6 +5,6 @@ app.AppRouter = Backbone.Router.extend({
     '': 'index',
   },
   index: function() {
-    console.log('Main Page has loaded')
+    console.log('Main Page has loaded');
   }
 });
