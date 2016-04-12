@@ -15,5 +15,16 @@
   <%= @airplane.columns %>
 </p>
 
+<div id="seating-plan">
+  <% @airplane.rows.times do %>
+    <div class="row">
+      <% @airplane.columns.times do %>
+        <div class="seat">
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<div>
+
 <%= link_to 'Edit', edit_airplane_path(@airplane) %> |
 <%= link_to 'Back', airplanes_path %>
