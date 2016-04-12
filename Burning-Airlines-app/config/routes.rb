@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root to: 'users#home'
   resources :reservations
   resources :flights
   resources :airplanes
