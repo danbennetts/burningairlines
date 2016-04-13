@@ -4,7 +4,15 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
-    @reservations = @current_user.reservations
+    @response = []
+    @current_user.reservations.each do |r|
+      reservation_object = {
+        reservation: r,
+        flight: r.flight
+      }
+      @response.push(reservation_object)
+    end
+    render json: @response
   end
 
   # GET /reservations/1
