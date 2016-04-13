@@ -6,7 +6,6 @@ app.AppView = Backbone.View.extend({
 
   render: function() {
     var appViewTemplate = $('#appViewTemplate').html();
-    console.log( appViewTemplate );
     this.$el.html( appViewTemplate );
 
     app.reservations.each(function(reservation){
@@ -21,5 +20,4 @@ app.AppView = Backbone.View.extend({
     });
 
   }
-
 });
