@@ -5,16 +5,13 @@ _.templateSettings = {
   evaluate: /\{\{(.+?)\}\}/g
 };
 
-app.router = new app.AppRouter();
-app.reservations = new app.Reservations();
+
 
 $(document).ready(function() {
+  app.router = new app.AppRouter();
+  app.reservations = new app.Reservations();
   app.appView = new app.AppView();
   Backbone.history.start();
-  app.reservations.fetch();
-
-  $("#searchButton").on("click", function () {
-    app.router.navigate('search', true);
-  });
+  // app.reservations.fetch();
 
 });

@@ -5,11 +5,14 @@ app.AppRouter = Backbone.Router.extend({
     '': 'index',
     'search': 'searchShow'
   },
+
   index: function() {
-    console.log("aljanljkn")
+    console.log("aljanljkn");
     var appView = new app.AppView();
+    app.reservations.fetch();
     appView.render();
   },
+
   searchShow: function() {
     var searchView = new app.SearchView();
     searchView.render();
