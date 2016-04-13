@@ -19,10 +19,11 @@
 <script id="searchViewTemplate" type="text/template">
 
   <select id="originSelect">
-    <option></option>
+    <option disabled selected>Select Origin</option>
   </select>
 
-  <select id="destinationSelect">
+  <select id="destinationSelect" disabled>
+    <option disabled selected>Select Destination</option>
   </select>
 
   <button id=searchButton>
@@ -43,4 +44,5 @@
   <li>{{= origin }}</li>
   <li>{{= destination }}</li>
   <li>{{= date }}</li>
+  <li><button class="toReservations">make reservation!</button></li>
 </script>

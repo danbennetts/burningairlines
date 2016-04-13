@@ -25,17 +25,23 @@ app.SearchView = Backbone.View.extend({
   },
 
   updateDestSelect: function() {
-    $('#destinationSelect').empty();
+    $('#destinationSelect').html("<option disabled selected>Select Destination</option>");
     var flightOrigin = $('#originSelect').val();
     var possibleFlights = _.filter(app.flights.models, function(flight){
       return flight.attributes.origin === flightOrigin;
     });
-    _.each(possibleFlights, function(flight){
+
+    var possibleFlightsUnique = _.uniq(possibleFlights, function(flight) {
+      return flight.destination;
+    });
+
+    _.each(possibleFlightsUnique, function(flight){
       var $destination_option = $('<option>');
       $destination_option.val(flight.get('destination'));
       $destination_option.text(flight.get('destination'));
       $('#destinationSelect').append($destination_option);
     });
+    $('#destinationSelect').prop('disabled', false);
   },
 
   loadResults: function() {
@@ -48,6 +54,7 @@ app.SearchView = Backbone.View.extend({
     });
     _.each(matchingFlights, function(flight){
       $flight_ul = $('<ul>');
+      $flight_ul.addClass('searchResult');
       $flight_ul.attr({
         'data-flight-id': flight.get('id'),
         'data-plane-id': flight.get('airplane_id')
@@ -57,7 +64,7 @@ app.SearchView = Backbone.View.extend({
       $flight_ul.html(  resultHTML( flight.toJSON() ) );
       $("#searchResults").append($flight_ul);
       // ASSIGN CLICK EVENT LISTENER
-      $flight_ul.on("click", function () {
+      $flight_ul.find('.toReservations').on("click", function () {
         app.router.navigate('airplanes/' + flight.get('airplane_id') +'/' + flight.get('id'), true);
       });
 
