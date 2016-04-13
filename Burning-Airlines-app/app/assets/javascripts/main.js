@@ -12,6 +12,7 @@ $(document).ready(function() {
  app.router = new app.AppRouter();
  app.reservations = new app.Reservations();
  app.flights = new app.Flights();
+ app.airplanes = new app.Airplanes();
  app.appView = new app.AppView();
  Backbone.history.start();
 
