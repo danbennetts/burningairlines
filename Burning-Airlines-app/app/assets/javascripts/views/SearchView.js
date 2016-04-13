@@ -6,6 +6,7 @@ app.SearchView = Backbone.View.extend({
 
   events: {
     'change #originSelect': 'updateDestSelect',
+    'click #searchButton': 'loadResults'
   },
 
   render: function(){
@@ -35,6 +36,32 @@ app.SearchView = Backbone.View.extend({
       $destination_option.text(flight.get('destination'));
       $('#destinationSelect').append($destination_option);
     });
-  }
+  },
+
+  loadResults: function() {
+    var $searchResults = $('#searchResults');
+    $searchResults.html('');
+    var origin = $('#originSelect').val();
+    var destination = $('#destinationSelect').val();
+    var matchingFlights = _.filter(app.flights.models, function(flight){
+      return (flight.get('origin') === origin && flight.get('destination') === destination);
+    });
+    _.each(matchingFlights, function(flight){
+      $flight_ul = $('<ul>');
+      $flight_ul.attr({
+        'data-flight-id': flight.get('id'),
+        'data-plane-id': flight.get('airplane_id')
+      });
+      resultTemplate = $('#searchResultTemplate').html();
+      resultHTML = _.template( resultTemplate );
+      $flight_ul.html(  resultHTML( flight.toJSON() ) );
+      $("#searchResults").append($flight_ul);
+      // ASSIGN CLICK EVENT LISTENER
+      $flight_ul.on("click", function () {
+        app.router.navigate('airplane/' + flight.get('airplane_id') +'/' + flight.get('id'), true);
+      });
+
+    });
+  },
 
 });
