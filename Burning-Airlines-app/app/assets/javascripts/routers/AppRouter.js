@@ -6,13 +6,12 @@ app.AppRouter = Backbone.Router.extend({
     'search': 'searchShow'
   },
   index: function() {
+    console.log("aljanljkn")
     var appView = new app.AppView();
     appView.render();
   },
   searchShow: function() {
-    $('#main').show();
-    $('#main').empty();
-    var searchView = new app.SearchView({collection: flights});
+    var searchView = new app.SearchView();
     searchView.render();
   }
 });
