@@ -12,4 +12,9 @@ $(document).ready(function() {
   app.appView = new app.AppView();
   Backbone.history.start();
   app.reservations.fetch();
+
+  $("#searchButton").on("click", function () {
+    app.router.navigate('search', true);
+  });
+
 });
