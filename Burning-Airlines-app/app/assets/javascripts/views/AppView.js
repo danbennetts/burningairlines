@@ -8,6 +8,7 @@ app.AppView = Backbone.View.extend({
     var appViewTemplate = $('#appViewTemplate').html();
     console.log( appViewTemplate );
     this.$el.html( appViewTemplate );
+    
     app.reservations.each(function(reservation){
       var reservationView = new app.ReservationView({
         model: reservation
@@ -18,7 +19,7 @@ app.AppView = Backbone.View.extend({
     $("#searchButton").on("click", function () {
       app.router.navigate('search', true);
     });
-    
+
   }
 
 });

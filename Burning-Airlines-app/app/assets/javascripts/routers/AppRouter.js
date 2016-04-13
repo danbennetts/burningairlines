@@ -3,7 +3,7 @@ var app = app || {};
 app.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
-    'search': 'searchShow'
+    'search': 'searchShow',
   },
 
   index: function() {
