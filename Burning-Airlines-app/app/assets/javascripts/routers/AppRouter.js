@@ -4,7 +4,7 @@ app.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
     'search': 'searchShow',
-    'airplanes/:plane_id': 'searchSeats'
+    'airplanes/:plane_id/:flight_id': 'searchSeats'
   },
 
   index: function() {

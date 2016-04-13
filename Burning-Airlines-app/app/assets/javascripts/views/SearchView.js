@@ -58,7 +58,7 @@ app.SearchView = Backbone.View.extend({
       $("#searchResults").append($flight_ul);
       // ASSIGN CLICK EVENT LISTENER
       $flight_ul.on("click", function () {
-        app.router.navigate('airplane/' + flight.get('airplane_id') +'/' + flight.get('id'), true);
+        app.router.navigate('airplanes/' + flight.get('airplane_id') +'/' + flight.get('id'), true);
       });
 
     });
