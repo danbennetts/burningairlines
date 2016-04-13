@@ -1,10 +1,11 @@
-#reservations > ul > li {
+#reservations > ul > li, #searchResults > ul > li {
   display: inline;
   list-style-type: none;
   padding-right: 20px;
 }
 
 
+<<<<<<< HEAD
 .seat {
   width: 20px;
   height: 20px;
@@ -15,4 +16,11 @@
 
 [data-seat="D"] {
     margin-left: 10px;
+}
+
+.searchResult {
+  display: block;
+  margin: 5px;
+  background-color: gainsboro;
+
 }

@@ -19,10 +19,11 @@
 <script id="searchViewTemplate" type="text/template">
 
   <select id="originSelect">
-    <option></option>
+    <option disabled selected>Select Origin</option>
   </select>
 
-  <select id="destinationSelect">
+  <select id="destinationSelect" disabled>
+    <option disabled selected>Select Destination</option>
   </select>
 
   <button id=searchButton>
@@ -35,4 +36,12 @@
 </script>
 
 <script id="airplaneViewTemplate" type="text/template">
+</script>
+
+<script id="searchResultTemplate" type="text/template">
+  <li>{{= flight_number }}</li>
+  <li>{{= origin }}</li>
+  <li>{{= destination }}</li>
+  <li>{{= date }}</li>
+  <li><button class="toReservations">make reservation!</button></li>
 </script>
