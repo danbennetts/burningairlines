@@ -1,8 +1,16 @@
 <div id="main">
-<div>
+</div>
 
 <script id="appViewTemplate" type="text/template">
   <h1>My Flights</h1>
 
   <div id="reservations"></div>
+</script>
+
+<script id="reservationViewTemplate" type="text/template">
+  <li>{{= flight_number }}</li>
+  <li>{{= origin }}</li>
+  <li>{{= destination }}</li>
+  <li>{{= date }}</li>
+  <li>{{= seat_row + seat_column }}</li>
 </script>
