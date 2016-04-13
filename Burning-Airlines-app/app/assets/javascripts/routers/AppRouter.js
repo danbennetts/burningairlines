@@ -8,10 +8,8 @@ app.AppRouter = Backbone.Router.extend({
   },
 
   index: function() {
-<<<<<<< HEAD
-=======
+
     console.log("aljanljkn");
->>>>>>> 056befcc4ff3d7584a9a2c782a94780c9ebba150
     var appView = new app.AppView();
     app.reservations.fetch();
     appView.render();
