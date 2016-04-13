@@ -3,3 +3,16 @@
   list-style-type: none;
   padding-right: 20px;
 }
+
+
+.seat {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  display: inline-block;
+  text-align: center;
+}
+
+[data-seat="D"] {
+    margin-left: 10px;
+}
