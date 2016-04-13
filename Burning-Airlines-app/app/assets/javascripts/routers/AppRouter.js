@@ -10,7 +10,8 @@ app.AppRouter = Backbone.Router.extend({
     appView.render();
   },
   searchShow: function() {
-    $('#main').html('');
+    $('#main').show();
+    $('#main').empty();
     var searchView = new app.SearchView({collection: flights});
     searchView.render();
   }

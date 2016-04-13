@@ -14,9 +14,9 @@
 //= require jquery_ujs
 //= require lib/underscore
 //= require lib/backbone
+//= require lib/backbone.localStorage-min
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree ./routers
-//= require turbolinks
 //= require_tree .
