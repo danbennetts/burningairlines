@@ -8,4 +8,8 @@ $(document).ready(function() {
   app.reservations.fetch();
   app.router = new app.AppRouter();
   Backbone.history.start();
+
+  $("#searchButton").on("click", function () {
+    app.router.navigate('search', true);
+  });
 });
