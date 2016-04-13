@@ -6,3 +6,11 @@
   <div id="reservations"></div>
   <button id="searchButton">Search for Flights</button>
 </script>
+
+<script id="reservationViewTemplate" type="text/template">
+  <li>{{= flight_number }}</li>
+  <li>{{= origin }}</li>
+  <li>{{= destination }}</li>
+  <li>{{= date }}</li>
+  <li>{{= seat_row + seat_column }}</li>
+</script>

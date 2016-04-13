@@ -1,15 +1,20 @@
 var app = app || {};
 
+_.templateSettings = {
+  interpolate: /\{\{\=(.+?)\}\}/g,
+  evaluate: /\{\{(.+?)\}\}/g
+};
+
+app.router = new app.AppRouter();
+app.reservations = new app.Reservations();
 
 $(document).ready(function() {
   app.appView = new app.AppView();
-  app.reservations = new app.Reservations();
-
-  app.reservations.fetch();
-  app.router = new app.AppRouter();
   Backbone.history.start();
+  app.reservations.fetch();
 
   $("#searchButton").on("click", function () {
     app.router.navigate('search', true);
   });
+
 });
