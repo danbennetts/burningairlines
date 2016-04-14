@@ -37,12 +37,47 @@ html {
   font-family: Oswald;
 }
 
+input {
+  display: block;
+}
+
+input[type=text] {
+  margin: auto;
+  width: 50%;
+}
+
+input[type=password] {
+  margin: auto;
+  width: 50%;
+}
+
+input[type=submit] {
+  margin: auto;
+      background-color: #fff;
+      margin-top: 15px;
+      outline: none;
+      border: 2px solid #000;
+      color: #F56060;
+      box-shadow: 4px 4px #000;
+      font-family: Lobster;
+      font-size: 14pt;
+      border-radius: 8px;
+      padding: 5px;
+
+  &:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px #000;
+  }
+
+
+}
+
 .loginForm {
   text-align: center;
   margin: 0 auto;
   background: white;
   border: 5px solid black;
-  width: 40%;
+  width: 50%;
   padding-bottom: 15px;
 }
 
@@ -71,20 +106,26 @@ body {
 }
 
 .seat {
-  width: 20px;
-  height: 20px;
-  border: 1px solid #000;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  color: #222;
+  font-weight: 600;
   display: inline-block;
   text-align: center;
-  margin: 2px;
+  margin: 10px;
 }
 
 .seat:hover{
-  background-color: red;
+  background-color: #FF5959;
+  color: white;
 }
 
+
 [selected='selected']{
-  background-color: red;
+  background-color: #FF5959;
+  color: white;
 }
 
 .searchResult {
@@ -96,6 +137,8 @@ body {
 .row-number {
   width: 20px;
   display: inline-block;
+  font-size: 13pt;
+  font-weight: 600;
 }
 
 .bookingButton {
@@ -117,8 +160,8 @@ body {
 .navbar-brand {
   font-family: Lobster;
   font-size: 20pt !important;
-  color: #A1D6FF !important;
-  padding: 0px;
+  color: #FFFFFF !important;
+  text-shadow: 3px 2px #F00;
 }
 
 .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
@@ -179,5 +222,65 @@ body {
 
 
 .glyphicon-fire{
-  color: #FF7F50;
+  // color: #FF0000;
+  // text-shadow: 2px 2px #FF7F50;
+}
+
+.row div:child(7n) {
+  padding-bottom: 10px;
+}
+
+
+.login-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Oswald;
+    width: 100%
+
+}
+
+.login-header {
+    margin-top: -111px;
+    color: #FF3B00;
+    font-size: 65pt;
+    text-shadow: 1px 2px #FFFFFF, 2px 7px #000;
+    font-family: Lobster;
+}
+
+.login-header > span.first-letter{
+  font-size: 153pt;
+  font-family: Lobster;
+}
+
+.login-header > span.glyphicon-fire {
+  // font-size: 120pt;
+  // text-shadow: 8px 2px #FF7F50;
+}
+
+
+#confirm {
+    background-color: #fff;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    outline: none;
+    border: 2px solid #000;
+    color: #F56060;
+    box-shadow: 4px 4px #000;
+    font-family: Lobster;
+    font-size: 14pt;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+#confirm:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px #000;
+}
+
+.login-header-container {
+  margin-top: 25px;
+  width: 100%;
+  text-align: center;
 }

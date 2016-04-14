@@ -1,8 +1,10 @@
 
+<div class="login-container">
+    <div class="login-header-container">
+      <h1 class="login-header"><span class="first-letter">B</span>urning Airlines <span class="glyphicon glyphicon-fire"></span></h1>
+  </div>
 <div class="loginForm">
-<h1>Burning Airlines</h1>
-<h2>Login</h2>
-
+    <h2>Login</h2>
   <%= form_tag login_path do %>
     <%= label_tag :email %>
     <%= text_field_tag :email  %>
@@ -12,4 +14,5 @@
 
     <%= submit_tag 'Login' %>
   <% end %>
+</div>
 </div>

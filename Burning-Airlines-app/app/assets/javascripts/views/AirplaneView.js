@@ -21,8 +21,9 @@ app.AirplaneView = Backbone.View.extend({
   },
 
   createRow: function(){
+    $('#main').append('<div class="airplane-view"></div>')
     for (var i = 1; i <= this.model.get('rows'); i++){
-      $("#main").append('<div class="row" id=' + i + '>' + '<span class="row-number">' + i + '</span>' +'</div>');
+      $(".airplane-view").append('<div class="row" id=' + i + '>' + '<span class="row-number">' + i + '</span>' +'</div>');
     }
   },
 
@@ -58,12 +59,14 @@ app.AirplaneView = Backbone.View.extend({
         console.log(reservationUser, currentUser);
         if (currentUser === reservationUser) {
           $('#' + rowNumber).find('[data-seat="' + seatNumber + '"]').css({
-            backgroundColor: "green",
+            backgroundColor: "#44D15B",
+            color: 'white',
             pointerEvents: "none"
           });
         } else {
           $('#' + rowNumber).find('[data-seat="' + seatNumber + '"]').css({
-            backgroundColor: "grey",
+            backgroundColor: "#8F8585",
+            color: 'white',
             pointerEvents: "none"
           });
         }
@@ -74,25 +77,32 @@ app.AirplaneView = Backbone.View.extend({
 
   confirmReservation: function(flight_id){
       $('#confirm').on('click', function(){
-        var confirmed = $('[selected=selected]');
-          if (confirmed.length > 0){
-            var seatRow = parseInt(confirmed.parent("div").attr("id"));
-            var seatColumn = confirmed.data('seat');
-            var flightId = parseInt(flight_id);
-
-
-            var reservation = new app.Reservation({
-              seat_row: seatRow,
-              seat_column: seatColumn,
-              flight_id: flightId
-            });
-            reservation.save().done(function(){
-              app.router.navigate('', true);
-            });
-            console.log(seatRow,seatColumn, flightId);
-          } else {
-            // alert("pick a fucking seat you dickhead");
-          }
+        $('#confirm-header-selection').text('We are just processing your Order')
+        $('#confirm').html('Thank You' + '<img src="assets/spinner.gif">');
       });
+
+      $('#confirm').on('click', function(){
+        setTimeout(function(){
+          var confirmed = $('[selected=selected]');
+            if (confirmed.length > 0){
+              var seatRow = parseInt(confirmed.parent("div").attr("id"));
+              var seatColumn = confirmed.data('seat');
+              var flightId = parseInt(flight_id);
+
+
+              var reservation = new app.Reservation({
+                seat_row: seatRow,
+                seat_column: seatColumn,
+                flight_id: flightId
+              });
+              reservation.save().done(function(){
+                app.router.navigate('', true);
+              });
+              console.log(seatRow,seatColumn, flightId);
+            } else {
+              // alert("pick a fucking seat you dickhead");
+            }
+        }, 5000);
+        })
     }
 });
