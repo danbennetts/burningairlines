@@ -1,4 +1,6 @@
+<div class="container">
 <div id="main">
+</div>
 </div>
 
 <script id="appViewTemplate" type="text/template">
@@ -18,6 +20,7 @@
 
 
 <script id="searchViewTemplate" type="text/template">
+  <h1>Flight Search</h1>
 
   <select id="originSelect">
     <option disabled selected>Select Origin</option>
@@ -38,6 +41,8 @@
 
 <script id="airplaneViewTemplate" type="text/template">
   <button id="confirm">Checkout</button>
+=======
+  <h1>Pick a Seat Bro!</h1>
 </script>
 
 <script id="searchResultTemplate" type="text/template">
@@ -49,10 +54,11 @@
 </script>
 
 <script id="bookingViewTemplate" type="text/template">
-  <li>{{= flight_number }}</li>
-  <li>{{= origin }}</li>
-  <li>{{= destination }}</li>
-  <li>{{= date }}</li>
-  <li>{{= seat_row + seat_column }}</li>
-  <li>{{= name }}</li>
+  <h1>Booking Details</h1>
+  <li class="bookingDetails">Flight Number: {{= flight_number }}</li>
+  <li class="bookingDetails">Origin: {{= origin }}</li>
+  <li class="bookingDetails">Destination: {{= destination }}</li>
+  <li class="bookingDetails">Date: {{= date }}</li>
+  <li class="bookingDetails">Seat Number: {{= seat_row + seat_column }}</li>
+  <li class="bookingDetails">Aircraft: {{= name }}</li>
 </script>
