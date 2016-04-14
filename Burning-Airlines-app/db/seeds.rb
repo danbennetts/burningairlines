@@ -7,9 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all()
-daniel = User.create(email: 'daniel@ga.co', password: 'chicken', password_confirmation: 'chicken')
-chris = User.create(email: 'chris@ga.co', password: 'chicken', password_confirmation: 'chicken')
-harrison = User.create(email: 'harrison@ga.co', password: 'chicken', password_confirmation: 'chicken')
+daniel = User.create(email: 'daniel@ga.co', password: 'chicken', password_confirmation: 'chicken', admin: true)
+chris = User.create(email: 'chris@ga.co', password: 'chicken', password_confirmation: 'chicken', admin: true)
+harrison = User.create(email: 'harrison@ga.co', password: 'chicken', password_confirmation: 'chicken', admin: true)
+badger = User.create(email: 'badger@ga.co', password: 'chicken', password_confirmation: 'chicken', admin: false)
+
 
 Airplane.destroy_all()
 first_plane = Airplane.create(name: 'Boeing 737', columns: 4, rows: 30)
