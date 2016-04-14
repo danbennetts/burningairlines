@@ -50,7 +50,11 @@ app.AirplaneView = Backbone.View.extend({
     app.flights.fetch().done(function() {
       var flight = app.flights.get(flight_id);
       _.each(flight.attributes.reservations, function(reservation){
-        console.log(reservation);
+        var rowNumber = reservation.seat_row;
+        var seatNumber = reservation.seat_column;
+        $('#' + rowNumber).find('[data-seat="' + seatNumber + '"]').css({
+          backgroundColor: "red"
+        });
       });
     });
 
