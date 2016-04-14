@@ -1,20 +1,21 @@
 
 #seating-plan {
   display: flex;
-  max-width: 500px;
+  max-width: 200px;
+  margin: 0 auto;
   flex-direction: column;
   justify-content: space-around;
   .row {
-    margin: 10px;
-    height: 50px;
+    margin: 3px;
+    height: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
   .seat {
-    margin: 10px;
-    height: 50px;
-    width: 50px;
+    margin: 2px;
+    height: 20px;
+    width: 20px;
     background-color: red;
   }
 }

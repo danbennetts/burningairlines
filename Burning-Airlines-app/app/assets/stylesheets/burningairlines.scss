@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Lobster);
 
 #reservations > ul > li, #searchResults > ul > li {
   display: inline-block;
@@ -26,6 +27,14 @@
 html {
   height: 100%;
   width: 100%;
+}
+
+.loginForm > h1 {
+  font-family: 'Lobster', sans-serif;
+}
+
+.loginForm > h2 {
+  font-family: Oswald;
 }
 
 .loginForm {
