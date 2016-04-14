@@ -13,6 +13,7 @@ app.AirplaneView = Backbone.View.extend({
     this.createRow();
     this.createSeats();
     this.setSets();
+    this.checkSelected();
   },
 
   createRow: function(){
@@ -32,6 +33,15 @@ app.AirplaneView = Backbone.View.extend({
     $.each($('.seat'), function (i, seat) {
       var setSeats = $(seat).text($(this).data('seat'));
     });
+  },
+
+  checkSelected: function(){
+    $('.seat').on('click', function(){
+      //
+      $("[selected=selected]").attr('selected', false);
+      console.log('shazam')
+      $(this).attr('selected', true)
+    })
   }
 
 });

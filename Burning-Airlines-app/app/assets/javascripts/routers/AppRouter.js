@@ -15,7 +15,7 @@ app.AppRouter = Backbone.Router.extend({
     app.reservations.fetch();
     appView.render();
   },
-
+  
   searchShow: function() {
     var searchView = new app.SearchView();
     searchView.render();
