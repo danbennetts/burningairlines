@@ -74,6 +74,7 @@ body {
   background-color: red;
 }
 
+
 [selected='selected']{
   background-color: red;
 }
@@ -171,4 +172,8 @@ body {
 
 .glyphicon-fire{
   color: #FF7F50;
+}
+
+.row div:child(7n) {
+  padding-bottom: 10px;
 }

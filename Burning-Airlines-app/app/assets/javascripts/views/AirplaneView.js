@@ -21,8 +21,9 @@ app.AirplaneView = Backbone.View.extend({
   },
 
   createRow: function(){
+    $('#main').append('<div class="airplane-view"></div>')
     for (var i = 1; i <= this.model.get('rows'); i++){
-      $("#main").append('<div class="row" id=' + i + '>' + '<span class="row-number">' + i + '</span>' +'</div>');
+      $(".airplane-view").append('<div class="row" id=' + i + '>' + '<span class="row-number">' + i + '</span>' +'</div>');
     }
   },
 
