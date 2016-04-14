@@ -4,7 +4,7 @@ app.AirplaneView = Backbone.View.extend({
 
   el: '#main',
 
-  render: function() {
+  render: function(plane_id, flight_id) {
 
     var airplaneViewTemplate = $('#airplaneViewTemplate').html();
     var airplaneViewHTML = _.template( airplaneViewTemplate );
@@ -14,12 +14,15 @@ app.AirplaneView = Backbone.View.extend({
     this.createSeats();
     this.setSets();
     this.checkSelected();
+    this.checkReserved(flight_id);
+      // this.checkReserved(response.reservations);
+
   },
 
   createRow: function(){
     for (var i = 1; i <= this.model.get('rows'); i++){
       $("#main").append('<div class="row" id=' + i + '></div>');
-    };
+    }
   },
 
   createSeats: function(){
@@ -39,10 +42,20 @@ app.AirplaneView = Backbone.View.extend({
     $('.seat').on('click', function(){
       //
       $("[selected=selected]").attr('selected', false);
-      $(this).attr('selected', true)
-    })
+      $(this).attr('selected', true);
+    });
   },
 
-  
+  checkReserved: function(flight_id) {
+    app.flights.fetch().done(function() {
+      var flight = app.flights.get(flight_id);
+      _.each(flight.attributes.reservations, function(reservation){
+        console.log(reservation);
+      });
+    });
+
+  },
+
+
 
 });
