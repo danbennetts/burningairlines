@@ -30,7 +30,6 @@ gem 'annotate'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
-gem 'fontawesome-rails', '~> 4.0', '>= 4.0.3.0'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

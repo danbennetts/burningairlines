@@ -32,7 +32,7 @@ app.SearchView = Backbone.View.extend({
     });
 
     var possibleFlightsUnique = _.uniq(possibleFlights, function(flight) {
-      return flight.destination;
+      return flight.attributes.destination;
     });
 
     _.each(possibleFlightsUnique, function(flight){

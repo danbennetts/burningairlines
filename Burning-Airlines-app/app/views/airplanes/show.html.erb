@@ -1,31 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="admin_container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <h1>Plane Details</h1>
-  <h2>Name: <%= @airplane.name %></h2>
+  <p>
+    <h1>Plane Details</h1>
+    <h2>Name: <%= @airplane.name %></h2>
 
-</p>
+  </p>
 
-<p>
-  <strong>Rows:</strong>
-  <%= @airplane.rows %>
-</p>
+  <p>
+    <strong>Rows:</strong>
+    <%= @airplane.rows %>
+  </p>
 
-<p>
-  <strong>Columns:</strong>
-  <%= @airplane.columns %>
-</p>
+  <p>
+    <strong>Columns:</strong>
+    <%= @airplane.columns %>
+  </p>
 
-<div id="seating-plan">
-  <% @airplane.rows.times do %>
-    <div class="row">
-      <% @airplane.columns.times do %>
-        <div class="seat">
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-<div>
+  <div id="seating-plan">
+    <% @airplane.rows.times do %>
+      <div class="row">
+        <% @airplane.columns.times do %>
+          <div class="seat">
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <div>
 
-<%= link_to 'Edit', edit_airplane_path(@airplane) %> |
-<%= link_to 'Back', airplanes_path %>
+  <%= link_to 'Edit', edit_airplane_path(@airplane) %> |
+  <%= link_to 'Back', airplanes_path %>
+</div>
