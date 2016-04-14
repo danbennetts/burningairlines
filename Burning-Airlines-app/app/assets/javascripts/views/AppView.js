@@ -19,5 +19,6 @@ app.AppView = Backbone.View.extend({
       app.router.navigate('search', true);
     });
 
+
   }
 });
