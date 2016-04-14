@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
 
   def home
+    redirect_to airplanes_path if @current_user.admin 
   end
 
   def index

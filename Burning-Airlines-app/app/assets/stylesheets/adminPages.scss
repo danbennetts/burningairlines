@@ -22,9 +22,23 @@
 
 .admin_container {
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   width: 80%;
   background: white;
   border: 5px solid black;
-  padding-bottom: 10px;
+  padding: 20px;
+  tr {
+    padding: 0 20px 0 20px;
+  }
+  td {
+    text-align: left;
+  }
+  h1 {
+    text-align: left;
+    margin-bottom: 30px
+  }
+}
+
+.reserved {
+  background-color: grey;
 }

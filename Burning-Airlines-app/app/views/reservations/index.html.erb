@@ -1,9 +1,9 @@
 <div class="admin_container">
   <p id="notice"><%= notice %></p>
 
-  <h1>Listing Reservations</h1>
+  <h1>Reservations</h1>
 
-  <table>
+  <table class="table table-striped">
     <thead>
       <tr>
         <th>User</th>
@@ -18,7 +18,7 @@
       <% @reservations.each do |reservation| %>
         <tr>
           <td><%= reservation.user.email %></td>
-          <td><%= reservation.flight.flight_number %></td>
+          <td><%= link_to reservation.flight.flight_number, flight_path(reservation.flight.id) %></td>
           <td><%= reservation.seat_row %></td>
           <td><%= reservation.seat_column %></td>
           <td><%= link_to 'Show', reservation %></td>
@@ -31,5 +31,5 @@
 
   <br>
 
-  <%= link_to 'New Reservation', new_reservation_path %>  
+  <%= link_to 'New Reservation', new_reservation_path, class: "btn btn-default" %>
 </div>

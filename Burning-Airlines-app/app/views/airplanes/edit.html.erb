@@ -1,8 +1,8 @@
 <div class="admin_container">
-  <h1>Editing Airplane</h1>
+  <h1>Edit Airplane <%= @airplane.id %></h1>
 
   <%= render 'form' %>
 
-  <%= link_to 'Show', @airplane %> |
-  <%= link_to 'Back', airplanes_path %>
+  <%= link_to 'Show', @airplane, class: "btn btn-default" %>
+  <%= link_to 'Back', airplanes_path, class: "btn btn-default" %>
 </div>

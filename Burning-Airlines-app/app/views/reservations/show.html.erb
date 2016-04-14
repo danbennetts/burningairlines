@@ -1,6 +1,8 @@
 <div class="admin_container">
   <p id="notice"><%= notice %></p>
 
+  <h1> Reservation </h1>
+
   <p>
     <strong>User:</strong>
     <%= @reservation.user_id %>
@@ -21,6 +23,6 @@
     <%= @reservation.seat_column %>
   </p>
 
-  <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
-  <%= link_to 'Back', reservations_path %>
+  <%= link_to 'Edit', edit_reservation_path(@reservation), class: "btn btn-default" %>
+  <%= link_to 'Back', reservations_path, class: "btn btn-default" %>
 </div>

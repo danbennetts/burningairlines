@@ -6,7 +6,12 @@ class SessionController < ApplicationController
     user = User.find_by :email => params[:email]
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id #log them in
-      redirect_to root_path
+      if (user.admin)
+        redirect_to airplanes_path
+      else
+        redirect_to root_path
+      end
+
     else
       flash[:error] = "Invalid email or password"
       redirect_to login_path

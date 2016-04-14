@@ -1,6 +1,8 @@
 <div class="admin_container">
   <p id="notice"><%= notice %></p>
 
+  <h1> Flight <%= @flight.id %></h1>
+
   <p>
     <strong>Flight number:</strong>
     <%= @flight.flight_number %>
@@ -26,6 +28,29 @@
     <%= @flight.airplane.name %>
   </p>
 
-  <%= link_to 'Edit', edit_flight_path(@flight) %> |
-  <%= link_to 'Back', flights_path %>  
+  <% reservedSeats = [] %>
+  <% reservingUsers = [] %>
+  <% @flight.reservations.each do |reservation| %>
+    <% reservedSeats.push( reservation.seat_column + reservation.seat_row.to_s ) %>
+  <% end %>
+
+  <div class="adminSeatingPlan">
+    <% colCounter = (@flight.airplane.columns - 1) %>
+    <% @flight.airplane.columns.times do %>
+      <% colNames =  ["A", "B", "C", "D", "E", "F", "G"] %>
+      <div class="adminSeatingPlanColumn" data-column="<%= colNames[colCounter] %>">
+        <% rowCounter = 1; %>
+        <% @flight.airplane.rows.times do %>
+          <% seat_number =  colNames[colCounter] + rowCounter.to_s %>
+          <div class="seat <%= "reserved" if reservedSeats.include? seat_number %>" data-seat="<%= seat_number  %>">
+          </div>
+          <% rowCounter += 1 %>
+        <% end %>
+      </div>
+      <% colCounter -= 1 %>
+    <% end %>
+  </div>
+
+  <%= link_to 'Edit', edit_flight_path(@flight), class: "btn btn-default" %>
+  <%= link_to 'Back', flights_path, class: "btn btn-default"%>
 </div>
