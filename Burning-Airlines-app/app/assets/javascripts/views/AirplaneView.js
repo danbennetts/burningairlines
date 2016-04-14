@@ -15,6 +15,7 @@ app.AirplaneView = Backbone.View.extend({
     this.setSets();
     this.checkSelected();
     this.checkReserved(flight_id);
+    this.confirmReservation(flight_id);
       // this.checkReserved(response.reservations);
 
   },
@@ -53,13 +54,35 @@ app.AirplaneView = Backbone.View.extend({
         var rowNumber = reservation.seat_row;
         var seatNumber = reservation.seat_column;
         $('#' + rowNumber).find('[data-seat="' + seatNumber + '"]').css({
-          backgroundColor: "red"
+          backgroundColor: "red",
+          pointerEvents: "none"
         });
       });
     });
 
   },
 
+  confirmReservation: function(flight_id){
+      $('#confirm').on('click', function(){
+        var confirmed = $('[selected=selected]');
+          if (confirmed.length > 0){
+            var seatRow = parseInt(confirmed.parent("div").attr("id"));
+            var seatColumn = confirmed.data('seat');
+            var flightId = parseInt(flight_id);
 
 
+            var reservation = new app.Reservation({
+              seat_row: seatRow,
+              seat_column: seatColumn,
+              flight_id: flightId
+            })
+            reservation.save().done(function(){
+              app.router.navigate('', true);
+            });
+            console.log(seatRow,seatColumn, flightId);
+          } else {
+            // alert("pick a fucking seat you dickhead");
+          }
+      })
+    }
 });
