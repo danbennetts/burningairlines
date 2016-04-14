@@ -12,6 +12,7 @@ app.AppRouter = Backbone.Router.extend({
     var appView = new app.AppView();
     app.reservations.fetch().done(function(){
       appView.render();
+      
     });
   },
 
