@@ -53,10 +53,20 @@ app.AirplaneView = Backbone.View.extend({
       _.each(flight.attributes.reservations, function(reservation){
         var rowNumber = reservation.seat_row;
         var seatNumber = reservation.seat_column;
-        $('#' + rowNumber).find('[data-seat="' + seatNumber + '"]').css({
-          backgroundColor: "red",
-          pointerEvents: "none"
-        });
+        var reservationUser = reservation.user_id;
+        var currentUser = $('#thisIsInsecure').data('user-id');
+        console.log(reservationUser, currentUser);
+        if (currentUser === reservationUser) {
+          $('#' + rowNumber).find('[data-seat="' + seatNumber + '"]').css({
+            backgroundColor: "green",
+            pointerEvents: "none"
+          });
+        } else {
+          $('#' + rowNumber).find('[data-seat="' + seatNumber + '"]').css({
+            backgroundColor: "grey",
+            pointerEvents: "none"
+          });
+        }
       });
     });
 
@@ -75,7 +85,7 @@ app.AirplaneView = Backbone.View.extend({
               seat_row: seatRow,
               seat_column: seatColumn,
               flight_id: flightId
-            })
+            });
             reservation.save().done(function(){
               app.router.navigate('', true);
             });
@@ -83,6 +93,6 @@ app.AirplaneView = Backbone.View.extend({
           } else {
             // alert("pick a fucking seat you dickhead");
           }
-      })
+      });
     }
 });
