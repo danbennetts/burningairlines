@@ -22,7 +22,7 @@ app.AirplaneView = Backbone.View.extend({
 
   createRow: function(){
     for (var i = 1; i <= this.model.get('rows'); i++){
-      $("#main").append('<div class="row" id=' + i + '>' + i + ' ' +'</div>');
+      $("#main").append('<div class="row" id=' + i + '>' + '<span class="row-number">' + i + '</span>' +'</div>');
     }
   },
 

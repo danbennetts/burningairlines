@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
-//= require 'fontawesome'
+//= require bootstrap
 //= require lib/underscore
 //= require lib/backbone
 //= require lib/backbone.localStorage-min
