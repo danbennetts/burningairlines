@@ -25,6 +25,7 @@ html {
 
 .header-tag {
   font-family: Oswald;
+  padding-bottom: 15px;
 }
 
 body {
@@ -86,4 +87,66 @@ body {
   font-family: Lobster;
   font-size: 20pt !important;
   color: #A1D6FF !important;
+  padding: 0px;
+}
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: 0px;
+    padding-top: 10px;
+}
+
+#searchButton {
+    background-color: #fff;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    outline: none;
+    border: 2px solid #000;
+    color: #F56060;
+    box-shadow: 4px 4px #000;
+    font-family: Lobster;
+    font-size: 14pt;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+#searchButton:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px #000;
+}
+
+
+#originSelect {
+    background-color: #fff;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    outline: none;
+    border: 2px solid #000;
+    color: #000;
+    box-shadow: 1px 1px #000;
+    font-family: Oswald;
+    font-size: 14pt;
+    border-radius: 8px;
+    padding: 26px;
+    height: 38px;
+}
+
+
+#destinationSelect {
+    background-color: #fff;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    outline: none;
+    border: 2px solid #000;
+    color: #000;
+    box-shadow: 1px 1px #000;
+    font-family: Oswald;
+    font-size: 14pt;
+    border-radius: 8px;
+    padding: 26px;
+    height: 38px;
+}
+
+
+.glyphicon-fire{
+  color: #FF7F50;
 }
