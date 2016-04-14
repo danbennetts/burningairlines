@@ -5,7 +5,7 @@ app.AppRouter = Backbone.Router.extend({
     '': 'index',
     'search': 'searchShow',
     'airplanes/:plane_id/:flight_id': 'searchSeats',
-    'airplanes/:id': 'bookingShow'
+    'reservations/:id': 'bookingShow'
   },
 
   index: function() {
@@ -22,7 +22,11 @@ app.AppRouter = Backbone.Router.extend({
   },
 
   bookingShow: function(id) {
-    var bookingView = new app.BookingView();
+    console.log('shazam');
+    var reservation = app.reservations.get(id);
+    var bookingView = new app.BookingView({
+      model: reservation
+    });
     bookingView.render();
   },
 
