@@ -13,6 +13,7 @@
   <li>{{= destination }}</li>
   <li>{{= date }}</li>
   <li>{{= seat_row + seat_column }}</li>
+  <button id="{{= id }}" class="bookingButton">Booking Info</button>
 </script>
 
 
@@ -44,4 +45,13 @@
   <li>{{= destination }}</li>
   <li>{{= date }}</li>
   <li><button class="toReservations">make reservation!</button></li>
+</script>
+
+<script id="bookingViewTemplate" type="text/template">
+  <li>{{= flight_number }}</li>
+  <li>{{= origin }}</li>
+  <li>{{= destination }}</li>
+  <li>{{= date }}</li>
+  <li>{{= seat_row + seat_column }}</li>
+  <li>{{= name }}</li>
 </script>
