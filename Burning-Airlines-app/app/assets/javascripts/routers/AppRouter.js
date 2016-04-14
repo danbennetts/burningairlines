@@ -9,20 +9,17 @@ app.AppRouter = Backbone.Router.extend({
   },
 
   index: function() {
-
-    console.log("aljanljkn");
     var appView = new app.AppView();
     app.reservations.fetch();
     appView.render();
   },
-  
+
   searchShow: function() {
     var searchView = new app.SearchView();
     searchView.render();
   },
 
   bookingShow: function(id) {
-    console.log('shazam');
     var reservation = app.reservations.get(id);
     var bookingView = new app.BookingView({
       model: reservation

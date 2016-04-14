@@ -39,9 +39,10 @@ app.AirplaneView = Backbone.View.extend({
     $('.seat').on('click', function(){
       //
       $("[selected=selected]").attr('selected', false);
-      console.log('shazam')
       $(this).attr('selected', true)
     })
-  }
+  },
+
+  
 
 });
