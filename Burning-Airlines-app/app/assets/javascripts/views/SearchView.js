@@ -41,7 +41,10 @@ app.SearchView = Backbone.View.extend({
       $destination_option.text(flight.get('destination'));
       $('#destinationSelect').append($destination_option);
     });
-    $('#destinationSelect').prop('disabled', false);
+    $('#destinationSelect').prop('disabled', false).css({
+      border: '2px solid #000',
+      color: '#000'
+    });
   },
 
   loadResults: function() {
