@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 #reservations > ul > li, #searchResults > ul > li {
   display: inline;
   list-style-type: none;
@@ -16,13 +19,16 @@ html {
 }
 
 body {
+  padding-top: 70px;
   background: url('https://lh3.googleusercontent.com/yo1wHkFfamkkp2WgZDnnguT-Ou50fnJ_L1SxwxqjbYkQERyg0iAFloy6Yce6afSA1g4O=h900');
   background-position: center;
+  background-attachment:fixed;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .container {
+  padding-top: 10px;
   margin: 0 auto;
   text-align: center;
   width: 80%;

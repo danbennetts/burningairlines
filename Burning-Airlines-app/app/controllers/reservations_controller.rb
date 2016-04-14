@@ -1,15 +1,21 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin_user
 
   # GET /reservations
   # GET /reservations.json
   def index
-    @reservations = @current_user.reservations
+    if @current_user.admin
+      @reservations = Reservation.all
+    else
+      @reservations = @current_user.reservations
+    end
   end
 
   # GET /reservations/1
   # GET /reservations/1.json
   def show
+    
   end
 
   # GET /reservations/new
