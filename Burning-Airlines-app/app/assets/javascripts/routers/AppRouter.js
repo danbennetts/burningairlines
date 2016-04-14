@@ -20,11 +20,13 @@ app.AppRouter = Backbone.Router.extend({
   },
 
   bookingShow: function(id) {
-    var reservation = app.reservations.get(id);
-    var bookingView = new app.BookingView({
-      model: reservation
+    app.reservations.fetch().done(function () {
+      var reservation = app.reservations.get(id);
+      var bookingView = new app.BookingView({
+        model: reservation
+      });
+      bookingView.render();
     });
-    bookingView.render();
   },
 
   searchSeats: function(plane_id, flight_id){

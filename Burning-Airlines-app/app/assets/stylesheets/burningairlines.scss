@@ -4,6 +4,33 @@
   padding-right: 20px;
 }
 
+.bookingDetails {
+  list-style-type: none;
+  font-size: 30px;
+  padding: 10px 10px;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: url('https://lh3.googleusercontent.com/yo1wHkFfamkkp2WgZDnnguT-Ou50fnJ_L1SxwxqjbYkQERyg0iAFloy6Yce6afSA1g4O=h900');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+  background: white;
+  border: 5px solid black;
+  padding-bottom: 10px;
+}
+
 .seat {
   width: 20px;
   height: 20px;
