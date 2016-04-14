@@ -2,9 +2,14 @@
 @import "bootstrap";
 
 #reservations > ul > li, #searchResults > ul > li {
-  display: inline;
+  display: inline-block;
   list-style-type: none;
   padding-right: 20px;
+  min-width: 60px;
+}
+
+#reservations > ul:nth-child(odd) {
+  background: rgba(121, 130, 121, 0.19);
 }
 
 .bookingDetails {
@@ -16,6 +21,10 @@
 html {
   height: 100%;
   width: 100%;
+}
+
+.header-tag {
+  font-family: Oswald;
 }
 
 body {
@@ -64,4 +73,17 @@ body {
 .row-number {
   width: 20px;
   display: inline-block;
+}
+
+.bookingButton {
+  display: inline-block;
+  border: none;
+  background: none;
+  color: #F56060;
+}
+
+.navbar-brand {
+  font-family: Lobster;
+  font-size: 20pt !important;
+  color: #A1D6FF !important;
 }

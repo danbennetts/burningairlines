@@ -4,9 +4,9 @@
 </div>
 
 <script id="appViewTemplate" type="text/template">
-  <h1>My Flights</h1>
+  <h1 class="header-tag">My Flights</h1>
   <div id="reservations"></div>
-  <button id="searchButton">Search for Flights</button>
+  <button id="searchButton">Search for Flights <span class="glyphicon glyphicon-chevron-right"></span></button>
 </script>
 
 <script id="reservationViewTemplate" type="text/template">
@@ -15,7 +15,7 @@
   <li>{{= destination }}</li>
   <li>{{= date }}</li>
   <li>{{= seat_row + seat_column }}</li>
-  <button id="{{= id }}" class="bookingButton">Booking Info</button>
+  <span class="booking-button-container"><button id="{{= id }}" class="bookingButton">Booking Info <span class="glyphicon glyphicon-chevron-right"></span></button></span>
 </script>
 
 
