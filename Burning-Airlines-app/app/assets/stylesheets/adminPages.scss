@@ -37,6 +37,17 @@
     text-align: left;
     margin-bottom: 30px
   }
+  .seat {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    border-radius: 4px;
+    color: #222;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    margin: 3px;
+  }
 }
 
 .reserved {
